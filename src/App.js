@@ -12,6 +12,9 @@ import Form from './Components/Form';
 import Table from './Components/Table';
 import ClickCounter from './Components/ClickCounter';
 import HoverCount from './Components/HoverCount';
+import HoverCounterTwo from './Components/HoverCounterTwo';
+import ClickCounterTwo from './Components/ClickCounterTwo';
+import NewCounter from './Components/NewCounter';
 
 
 function App() {
@@ -45,8 +48,15 @@ function App() {
       {/* <Form /> */}
 
       {/* <Table /> */}
-      <ClickCounter />
-      <HoverCount />
+      {/* <ClickCounter />
+      <HoverCount /> */}
+
+      <NewCounter render={(count , incrementCount)=>{   // render is a prop which will control what is going to be rendered by component 
+        return <ClickCounterTwo count={count} incrementCount={incrementCount} />
+      }} />
+       <NewCounter render={(count , incrementCount)=>{
+        return <HoverCounterTwo count={count} incrementCount={incrementCount} />
+      }} />
       
     </div>
     
